@@ -1,0 +1,34 @@
+{
+  "name": "@medic-code/design-system",
+  "main": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "version": "1.0.0",
+  "description": "Design System for Personal Website",
+  "scripts": {
+    "build": "npm run clean && node ./esbuild.prod.js && npm run ts-types",
+    "dev": "npm run clean && node ./esbuild.dev.js & npm run ts-types",
+    "clean": "rimraf dist",
+    "type-check": "tsc --noEmit",
+    "ts-types": "tsc --emitDeclarationOnly --outDir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medic-code/design-system.git"
+  },
+  "author": "Aaron Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medic-code/design-system/issues"
+  },
+  "homepage": "https://github.com/medic-code/design-system#readme",
+  "dependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.10",
+    "esbuild": "^0.16.17",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5"
+  }
+}
