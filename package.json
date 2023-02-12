@@ -3,14 +3,18 @@
   "main": "./dist/esm/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "Design System for Personal Website",
   "scripts": {
     "build": "npm run clean && node ./esbuild.prod.js && npm run ts-types",
-    "dev": "npm run clean && node ./esbuild.dev.js & npm run ts-types",
     "clean": "rimraf dist",
-    "type-check": "tsc --noEmit",
-    "ts-types": "tsc --emitDeclarationOnly --outDir dist"
+    "dev": "npm run clean && node ./esbuild.dev.js & npm run ts-types",
+    "format": "prettier --write \"./**/*.{ts,tsx}\"",
+    "lint": "eslint --ext=ts,tsx",
+    "test": "jest",
+    "ts-types": "tsc --emitDeclarationOnly --outDir dist",
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -22,13 +26,29 @@
     "url": "https://github.com/medic-code/design-system/issues"
   },
   "homepage": "https://github.com/medic-code/design-system#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
-    "esbuild": "^0.16.17",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "esbuild": "^0.17.7",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.4.2",
+    "jest-environment-jsdom": "^29.4.2",
+    "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   }
 }
