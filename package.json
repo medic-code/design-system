@@ -7,11 +7,11 @@
   "version": "1.0.0",
   "description": "Design System for Personal Website",
   "scripts": {
-    "build": "npm run clean && node ./esbuild.prod.js && npm run ts-types",
+    "build": "npm run clean && node ./esbuild.prod.js",
     "clean": "rimraf dist",
     "dev": "npm run clean && node ./esbuild.dev.js & npm run ts-types",
-    "format": "prettier --write \"./**/*.{ts,tsx}\"",
-    "lint": "eslint --ext=ts,tsx",
+    "format": "prettier --ignore-path .gitgnore --write \"./**/*.{ts,tsx}\"",
+    "lint": "eslint --ignore-path .gitignore --ext=ts,tsx",
     "test": "jest",
     "ts-types": "tsc --emitDeclarationOnly --outDir dist",
     "type-check": "tsc --noEmit"
